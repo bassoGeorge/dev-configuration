@@ -151,12 +151,16 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " Window mappings
 " ---- Moving between windows using ,
-map <leader>h <C-w>h
-map <leader>j <C-w>j
-map <leader>k <C-w>k
-map <leader>l <C-w>l
+" map <leader>h <C-w>h
+" map <leader>j <C-w>j
+" map <leader>k <C-w>k
+" map <leader>l <C-w>l
 map <leader><lt> :tabprevious<CR>
 map <leader>> :tabnext<CR>
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 " ---- quick toggle NERDTree using ,mm
 map <leader>mm :NERDTreeToggle<CR>
@@ -165,8 +169,12 @@ map <C-w>mm :NERDTreeToggle<CR>
 " ---- Tagbar, less important, takes time to open,,m
 map <leader>m :TagbarToggle<CR>
 map <C-w>m :TagbarToggle<CR>
+noremap <Space> za
 
 
+" ---- auto complete update ---
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter goToDefinitionElseDeclaration<CR>
 
 
 " ----------- Garbage ------------------------------------------------
@@ -194,4 +202,3 @@ map <C-w>m :TagbarToggle<CR>
 " set shortmess=atI
 " Show the (partial) command as it’s being typed
 " set showcmd
-
